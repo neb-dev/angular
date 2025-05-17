@@ -1,2 +1,16 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<app-header />
+
+<main>
+  <ul id="users">
+    <li>
+      <app-user
+        [avatar]="users[3].avatar"
+        [name]="users[3].name"
+        [id]="users[3].id"
+        (select)="onSelect($event)"
+      />
+    </li>
+  </ul>
+</main>
+
+<router-outlet />
