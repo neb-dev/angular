@@ -10,8 +10,10 @@ import { DummyUser } from '../dummy-users';
 })
 export class TasksComponent {
   user = input<DummyUser | null>(); // (typeof DUMMY_USERS)[number]
+  // @Input() user: DummyUser | null = null;
 
   get userName() {
     return this.user()?.name;
+    // return this.user?.name;
   }
 }
