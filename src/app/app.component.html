@@ -9,7 +9,22 @@
     }
   </ul>
 
+  @if (user) {
   <app-task [user]="user" />
+  } @else {
+  <h2>Select a user to view their tasks.</h2>
+  }
 </main>
 
 <router-outlet />
+
+<!-- legacy for
+  <li *ngFor="let user of users">
+    <app-user [user]="user" (selectedUserId)="getUser($event)" />
+  </li>
+
+legacy if else
+  <app-task *ngIf="user; else noUser" [user]="user" />
+  <ng-template #noUser>
+    <h2>Select a user to view their tasks.</h2>
+  </ng-template> -->
