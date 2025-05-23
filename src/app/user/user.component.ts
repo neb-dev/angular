@@ -9,6 +9,8 @@ import { DummyUser } from '../dummy-users';
 })
 export class UserComponent {
   user = input.required<DummyUser>();
+  isSelected = input.required<boolean>();
+
   @Output() selectedUserId = new EventEmitter<string>();
 
   get imagePath() {

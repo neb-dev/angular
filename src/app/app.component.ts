@@ -19,4 +19,8 @@ export class AppComponent {
   getUser(id: string) {
     this.user = this.users.find((u) => u.id === id) || null;
   }
+
+  get userId() {
+    return this.user?.id;
+  }
 }
