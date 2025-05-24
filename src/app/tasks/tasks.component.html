@@ -2,9 +2,13 @@
   <header>
     <h2>{{ userName }}'s Tasks</h2>
     <menu>
-      <button>Add Task</button>
+      <button (click)="(openNewTaskForm)">Add Task</button>
     </menu>
   </header>
+
+  @if (showNewTaskForm) {
+  <app-new-task />
+  }
 
   <ul>
     @for (task of userTasks; track task.id) {
