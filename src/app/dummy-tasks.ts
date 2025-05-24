@@ -6,7 +6,7 @@ export interface DummyTask {
   dueDate: string;
 }
 
-export const dummyTasks = [
+export const DUMMY_TASKS: DummyTask[] = [
   {
     id: 't1',
     userId: 'u1',
