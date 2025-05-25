@@ -2,12 +2,15 @@
   <header>
     <h2>{{ userName }}'s Tasks</h2>
     <menu>
-      <button (click)="(openNewTaskForm)">Add Task</button>
+      <button (click)="(openNewTaskDialog)">Add Task</button>
     </menu>
   </header>
 
-  @if (showNewTaskForm) {
-  <app-new-task />
+  @if (showNewTaskDialog) {
+  <app-new-task
+    (closeDialog)="(closeNewTaskDialog)"
+    (submittedTask)="addNewTask($event)"
+  />
   }
 
   <ul>

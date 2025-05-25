@@ -1,12 +1,43 @@
-<section>
-  <h3>Add New Task</h3>
-  <p>id</p>
-  <p>userId</p>
-  <p>title</p>
-  <p>summary</p>
-  <p>dueDate</p>
-  <div>
-    <button>save</button>
-    <button>cancel</button>
-  </div>
-</section>
+<div class="backdrop" (mousedown)="handleCloseDialog()"></div>
+<dialog open>
+  <h2>Add Task</h2>
+  <form (ngSubmit)="handleSubmit()">
+    <p>
+      <label for="title">Title</label>
+      <input
+        required
+        type="text"
+        id="title"
+        name="title"
+        [(ngModel)]="newTask.title"
+      />
+    </p>
+
+    <p>
+      <label for="summary">Summary</label>
+      <textarea
+        required
+        id="summary"
+        rows="5"
+        name="summary"
+        [(ngModel)]="newTask.summary"
+      ></textarea>
+    </p>
+
+    <p>
+      <label for="due-date">Due Date</label>
+      <input
+        required
+        type="date"
+        id="due-date"
+        name="due-date"
+        [(ngModel)]="newTask.dueDate"
+      />
+    </p>
+
+    <p class="actions">
+      <button type="button" (click)="handleCloseDialog()">Cancel</button>
+      <button type="submit">Create</button>
+    </p>
+  </form>
+</dialog>
