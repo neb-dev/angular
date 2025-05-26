@@ -7,15 +7,15 @@
   </header>
 
   @if (showNewTaskDialog) {
-  <app-new-task
-    (closeDialog)="(closeNewTaskDialog)"
-    (submittedTask)="addNewTask($event)"
-  />
+  <app-new-task [userId]="user().id" (closeDialog)="(closeNewTaskDialog)" />
+  <!-- (submittedTask)="addNewTask($event)" now handled by angular dep inject-->
+
   }
 
   <ul>
     @for (task of userTasks; track task.id) {
-    <li><app-task [task]="task" (completedTask)="completeTask($event)" /></li>
+    <li><app-task [task]="task" /></li>
+    <!-- (completedTask)="completeTask($event)" now handldded by angular dep inject -->
     }
   </ul>
 </section>
