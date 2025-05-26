@@ -1,11 +1,13 @@
 import { Component, input, EventEmitter, Output } from '@angular/core';
 import { DummyUser } from '../dummy-users';
+import { CardComponent } from '../ui/card/card.component';
 
 @Component({
   selector: 'app-user',
   standalone: true,
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
+  imports: [CardComponent],
 })
 export class UserComponent {
   user = input.required<DummyUser>();

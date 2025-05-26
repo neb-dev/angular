@@ -49,5 +49,6 @@ export class TasksComponent {
       summary: task.summary,
       dueDate: task.dueDate,
     });
+    this.showNewTaskDialog = false;
   }
 }
